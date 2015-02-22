@@ -87,7 +87,7 @@ def updateStatusBar(view):
         # which are common to many encodings (UTF-8, ISO-8859-1, Windows-1251, etc)
         charName = getUnicodeCharName(char)
         statusString += ' (' + charName + ')'
-    sublime.status_message(statusString)
+    view.set_status('zzCharacterInfo', statusString)
 
 class CharacterInfoListener(sublime_plugin.EventListener):
     def on_selection_modified(self, view):
